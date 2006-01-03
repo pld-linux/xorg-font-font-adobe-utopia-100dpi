@@ -1,12 +1,12 @@
 Summary:	adobe-utopia-100dpi font
 Summary(pl):	Font adobe-utopia-100dpi
 Name:		xorg-font-font-adobe-utopia-100dpi
-Version:	0.99.2
+Version:	1.0.1
 Release:	0.1
 License:	MIT
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-adobe-utopia-100dpi-%{version}.tar.bz2
-# Source0-md5:	b55f84f807595ed7ca74d15e2585e94f
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-adobe-utopia-100dpi-%{version}.tar.bz2
+# Source0-md5:	5d28a30efef966f8dbbaff9a6619f01a
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -55,5 +55,5 @@ fontpostinst 100dpi
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog
+%doc COPYING ChangeLog README
 %{_fontsdir}/100dpi/*.pcf.gz
