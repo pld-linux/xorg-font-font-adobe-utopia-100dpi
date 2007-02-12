@@ -1,5 +1,5 @@
 Summary:	adobe-utopia-100dpi font
-Summary(pl):	Font adobe-utopia-100dpi
+Summary(pl.UTF-8):   Font adobe-utopia-100dpi
 Name:		xorg-font-font-adobe-utopia-100dpi
 Version:	1.0.1
 Release:	0.1
@@ -23,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 adobe-utopia-100dpi font.
 
-%description -l pl
+%description -l pl.UTF-8
 Font adobe-utopia-100dpi.
 
 %prep
