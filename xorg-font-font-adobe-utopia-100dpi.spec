@@ -1,12 +1,12 @@
 Summary:	Adobe Utopia 100dpi bitmap font
 Summary(pl.UTF-8):	Font bitmapowy 100dpi Adobe Utopia
 Name:		xorg-font-font-adobe-utopia-100dpi
-Version:	1.0.1
-Release:	2
+Version:	1.0.2
+Release:	1
 License:	distributable (see COPYING)
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-adobe-utopia-100dpi-%{version}.tar.bz2
-# Source0-md5:	5d28a30efef966f8dbbaff9a6619f01a
+# Source0-md5:	1c3a2c26bd3f6e406fbadc7380efa369
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -14,7 +14,7 @@ BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util >= 0.99.2
+BuildRequires:	xorg-font-font-util >= 1.1.1
 BuildRequires:	xorg-util-util-macros
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/100dpi
@@ -43,6 +43,8 @@ ISO-8859-13, ISO-8859-14 i ISO-8859-15.
 %{__autoconf}
 %{__automake}
 %configure \
+	--build=%{_host_platform} \
+	--host=%{_host_platform} \
 	--with-fontdir=%{_fontsdir}/100dpi
 
 %{__make}
