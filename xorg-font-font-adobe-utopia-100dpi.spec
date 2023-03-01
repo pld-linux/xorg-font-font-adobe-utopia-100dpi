@@ -1,21 +1,23 @@
 Summary:	Adobe Utopia 100dpi bitmap font
 Summary(pl.UTF-8):	Font bitmapowy 100dpi Adobe Utopia
 Name:		xorg-font-font-adobe-utopia-100dpi
-Version:	1.0.4
-Release:	2
+Version:	1.0.5
+Release:	1
 License:	distributable (see COPYING)
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/individual/font/font-adobe-utopia-100dpi-%{version}.tar.bz2
-# Source0-md5:	66fb6de561648a6dce2755621d6aea17
-URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+Source0:	https://xorg.freedesktop.org/releases/individual/font/font-adobe-utopia-100dpi-%{version}.tar.xz
+# Source0-md5:	ded4d82a14de5071530838652890e39f
+URL:		https://xorg.freedesktop.org/
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util >= 1.2
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xorg-font-font-util >= 1.4
+BuildRequires:	xorg-util-util-macros >= 1.20
+BuildRequires:	xz
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/100dpi
 BuildArch:	noarch
@@ -43,8 +45,10 @@ ISO-8859-13, ISO-8859-14 i ISO-8859-15.
 %{__autoconf}
 %{__automake}
 %configure \
+%if "%{_gnu}" != "-gnux32"
 	--build=%{_host} \
 	--host=%{_host} \
+%endif
 	--with-fontdir=%{_fontsdir}/100dpi
 
 %{__make}
@@ -66,5 +70,5 @@ fontpostinst 100dpi
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README
+%doc COPYING ChangeLog README.md
 %{_fontsdir}/100dpi/UT*.pcf.gz
